@@ -14,7 +14,7 @@
 - **Restrição Absoluta (Código Intocável)**: A entrega deste projeto é **PURAMENTE DOCUMENTAL**. Os agentes de IA **NUNCA** devem alterar, criar ou remover arquivos de código fonte ou testes (`src/`, `prisma/`, `tests/`, `tsconfig.json`, `package.json`, etc.). O código existente serve estritamente como leitura de contexto e referência de integração.
 - **Diretriz de Rastreabilidade e Validação Contínua (Zero Alucinação / Zero Invenção)**:
   - **Validação Pré e Pós-Geração**: **ANTES** de gerar qualquer documento de documentação e **APÓS** a geração, o agente de IA deve obrigatoriamente realizar um cross-check minucioso das informações com o arquivo [`TRANSCRICAO.md`](file:///Users/leandromeira/Dev/mba-ia-desafio-design-docs-com-ia/TRANSCRICAO.md) e com o código fonte (`src/`, `prisma/schema.prisma`).
-  - **Citação Obrigatória das Falas dos Participantes**: Em todos os arquivos de documentação produzidos (`PRD.md`, `RFC.md`, `FDD.md`, `ADR-*.md` e `TRACKER.md`), o agente deve **SEMPRE** referenciar explicitamente a fala da pessoa responsável pela decisão ou requisito, incluindo o timestamp e nome do falante (ex: `[09:17] Diego`, `[09:20] Sofia`, `[09:00] Marcos`, `[09:31] Larissa`, `[09:28] Bruno`). **É expressamente proibido inventar ou presumir requisitos sem citação comprovada.**
+  - **Citação Obrigatória das Falas dos Participantes**: Em todos os arquivos de documentação produzidos (`PRD.md`, `RFC.md`, `FDD.md`, `ADR-*.md` e `TRACKER.md`), o agente deve **SEMPRE** referenciar explicitamente a fala da pessoa responsável pela decisão ou requisito, incluindo o timestamp e nome do falante (ex: `[09:17] Diego`, `[09:20] Sofia`, `[09:00] Marcos`, `[09:31] Larissa`, `[09:28] Bruno`). Usar estritamente o primeiro nome da pessoa, sem adicionar cargos ou títulos presumidos. **É expressamente proibido inventar ou presumir requisitos sem citação comprovada.**
 
 ---
 
@@ -23,11 +23,11 @@
 ### 2.1. Metadados & Participantes
 - **Data/Horário**: Quinta-feira, 09:00 (Duração: ~55 minutos, via Google Meet).
 - **Participantes**:
-  1. **Larissa**: Tech Lead (conduziu a reunião e facilitou as decisões).
-  2. **Marcos**: Product Manager (trouxe a dor dos clientes B2B e requisitos de negócio).
-  3. **Bruno**: Engenheiro Pleno do time de Pedidos (foco na integração com o módulo de orders e transações).
-  4. **Diego**: Engenheiro Sênior do time de Plataforma (propositor da arquitetura de Outbox, polling, worker e retry).
-  5. **Sofia**: Engenheira de Segurança (definiu autenticação HMAC-SHA256, rotação de secrets, HTTPS e segurança).
+  1. **Larissa** (conduziu a reunião e facilitou as decisões).
+  2. **Marcos** (trouxe a dor dos clientes B2B e requisitos de negócio).
+  3. **Bruno** (foco na integração com o módulo de pedidos e transações).
+  4. **Diego** (propositor da arquitetura de Outbox, polling, worker e retry).
+  5. **Sofia** (definiu autenticação HMAC-SHA256, rotação de secrets, HTTPS e segurança).
 
 ### 2.2. Motivação de Negócio & Problema
 - **Clientes Solicitantes**: Tres clientes B2B principais: *Atlas Comercial*, *MaxDistribuição* e *Nova Cargo*.
