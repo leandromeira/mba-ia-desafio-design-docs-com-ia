@@ -44,6 +44,7 @@
 3. **Worker Separado em Polling (2 segundos)**:
    - Processo Node.js isolado (`src/worker.ts`, executado por `npm run worker`), separado do processo principal da API (`src/server.ts`).
    - O worker executa polling a cada 2 segundos na tabela `webhook_outbox`, buscando eventos pendentes por ordem de criação (`created_at`).
+   - Timeout máximo de cada requisição HTTP enviada ao cliente: **10 segundos** (se exceder, considera falha e incrementa retry).
    - Abre uma instância própria de `PrismaClient`.
    - *Alternativa descartada*: Triggers do MySQL (o MySQL não possui `NOTIFY/LISTEN` nativo para notificar processos externos).
 4. **Resiliência, Retry e Dead Letter Queue (DLQ)**:
@@ -63,7 +64,7 @@
    - Demais headers obrigatórios enviados no request do webhook: `X-Event-Id`, `X-Signature`, `X-Timestamp` (timestamp do envio), `X-Webhook-Id` (ID da configuração do webhook), `Content-Type: application/json`.
 7. **Snapshot de Payload**:
    - O payload do evento é renderizado e armazenado como JSON estático (snapshot) no momento em que a transação de mudança de status é commitada.
-   - Payload enxuto: contem `event_id`, `event_type` (`order.status_changed`), `timestamp`, `order_id`, `order_number`, `from_status`, `to_status`, `customer_id`, `total_cents` (sem a lista de itens, para manter o payload leve).
+   - Payload enxuto em formato JSON: contem `event_id`, `event_type` (`order.status_changed`), `timestamp` (formato ISO 8601), `order_id`, `order_number`, `from_status`, `to_status`, `customer_id`, `total_cents` (sem a lista de itens, para manter o payload leve).
 8. **Identificadores Únicos**:
    - Todas as tabelas de webhook utilizam **UUID (v4)** como chave primária, seguindo a convenção de todo o banco de dados do projeto.
 9. **Controle de Acesso & Autorização**:
