@@ -12,7 +12,9 @@
 - **Objetivo Principal**: Utilizar a transcrição de uma reunião técnica real (`TRANSCRICAO.md`) e o código-fonte existente da aplicação Order Management System (OMS) para produzir um pacote completo e acionável de **Design Docs** (PRD, RFC, FDD, ADRs, Tracker e README do processo), seguindo integralmente as instruções contidas no [`ENUNCIADO.md`](file:///Users/leandromeira/Dev/mba-ia-desafio-design-docs-com-ia/ENUNCIADO.md).
 - **Papel da IA**: A IA atua como ferramenta principal de produção ("executora sob mentoria/supervisão"), auxiliando na leitura da codebase, análise da transcrição, estruturação técnica e geração do conteúdo da documentação.
 - **Restrição Absoluta (Código Intocável)**: A entrega deste projeto é **PURAMENTE DOCUMENTAL**. Os agentes de IA **NUNCA** devem alterar, criar ou remover arquivos de código fonte ou testes (`src/`, `prisma/`, `tests/`, `tsconfig.json`, `package.json`, etc.). O código existente serve estritamente como leitura de contexto e referência de integração.
-- **Diretriz de Rastreabilidade (Zero Alucinação / Zero Invenção)**: Toda e qualquer informação (requisito, decisão, contrato, restrição, erro, header) documentada nos arquivos de `docs/` deve ser obrigatoriamente rastreável à transcrição (`TRANSCRICAO.md`) ou à codebase (`src/`, `prisma/schema.prisma`). **É expressamente proibido inventar ou presumir requisitos sem fonte comprovada.**
+- **Diretriz de Rastreabilidade e Validação Contínua (Zero Alucinação / Zero Invenção)**:
+  - **Validação Pré e Pós-Geração**: **ANTES** de gerar qualquer documento de documentação e **APÓS** a geração, o agente de IA deve obrigatoriamente realizar um cross-check minucioso das informações com o arquivo [`TRANSCRICAO.md`](file:///Users/leandromeira/Dev/mba-ia-desafio-design-docs-com-ia/TRANSCRICAO.md) e com o código fonte (`src/`, `prisma/schema.prisma`).
+  - **Citação Obrigatória das Falas dos Participantes**: Em todos os arquivos de documentação produzidos (`PRD.md`, `RFC.md`, `FDD.md`, `ADR-*.md` e `TRACKER.md`), o agente deve **SEMPRE** referenciar explicitamente a fala da pessoa responsável pela decisão ou requisito, incluindo o timestamp e nome do falante (ex: `[09:17] Diego`, `[09:20] Sofia`, `[09:00] Marcos`, `[09:31] Larissa`, `[09:28] Bruno`). **É expressamente proibido inventar ou presumir requisitos sem citação comprovada.**
 
 ---
 
@@ -256,3 +258,9 @@ A pasta [`Design Docs com IA/`](file:///Users/leandromeira/Dev/mba-ia-desafio-de
    - Os **ADRs** documentam decisões isoladas e definitivas.
    - O **FDD** detalha o contrato de API, payloads, diagramas de sequência e integração real no código.
    - O **Tracker** conecta todos os itens anteriores à sua origem factual.
+5. **Confirmação Obrigatória Pré e Pós-Geração (`TRANSCRICAO.md`)**:
+   - **Antes da Geração**: O agente DEVE obrigatoriamente ler os trechos correspondentes da `TRANSCRICAO.md` para mapear os fatos exatos.
+   - **Após a Geração**: O agente DEVE revisar linha a linha o documento produzido para garantir que nenhum dado, parâmetro ou comportamento foi inventado pela IA.
+6. **Citação Obrigatória das Falas das Pessoas**:
+   - Em toda documentação gerada, o agente DEVE SEMPRE citar a fala da pessoa que deu a instrução ou tomou a decisão técnica, indicando o timestamp e o nome do participante (ex: `[09:17] Diego: fala...`, `[09:20] Sofia`, `[09:00] Marcos`, `[09:31] Larissa`, `[09:28] Bruno`).
+
