@@ -179,6 +179,7 @@ A pasta [`Design Docs com IA/`](file:///Users/leandromeira/Dev/mba-ia-desafio-de
 
 ### 5.1. PRD (Product Requirement Document) — `docs/PRD.md`
 - **Módulo do Curso**: `Design Docs com IA/03 - Documentação na era da IA/`
+- **Gerador / Prompt & Esqueleto Padrão**: [`prd-generator.md`](file:///Users/leandromeira/Dev/mba-ia-desafio-design-docs-com-ia/Design%20Docs%20com%20IA/03%20-%20Documenta%C3%A7%C3%A3o%20na%20era%20da%20IA/prd-generator.md) (Contém o prompt de entrevista, estrutura JSON interna e o modelo de saída Markdown oficial).
 - **Aulas de Referência**:
   - `03 - PRDs - Product Requirement Document`
   - `04 - Seções de um PRD`
@@ -204,6 +205,7 @@ A pasta [`Design Docs com IA/`](file:///Users/leandromeira/Dev/mba-ia-desafio-de
 
 ### 5.3. FDD (Feature Design Document) — `docs/FDD.md`
 - **Módulo do Curso**: `Design Docs com IA/04 - Design e Arquitetura/`
+- **Gerador / Prompt & Esqueleto Padrão**: [`fdd-generator.md`](file:///Users/leandromeira/Dev/mba-ia-desafio-design-docs-com-ia/Design%20Docs%20com%20IA/04%20-%20Design%20e%20Arquitetura/fdd-generator.md) (Contém o prompt de entrevista técnica, estrutura JSON e o esqueleto oficial de FDD com a matriz de erros, observabilidade e contratos).
 - **Aulas de Referência**:
   - `06 - Feature Design Doc`
   - `07 - Exemplo de um FDD`
